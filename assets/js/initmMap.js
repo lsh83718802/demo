@@ -487,11 +487,11 @@ var data=[
         }
       },
       tooltip: {
-        formatter: function(params) {
-          if ('value' in params.data) {
-            return params.data.value[2] + ': ' + params.data.value[0];
-          }
-        }
+        // formatter: function(params) {
+        //   if ('value' in params.data) {
+        //     return params.data.value[2] + ': ' + params.data.value[0];
+        //   }
+        // }
       },
       grid: {
         left: '12%',
@@ -650,6 +650,12 @@ var data=[
     var myChartMove = echarts.init(domMove);
     var time = timestampToTime(+new Date());
     var data = [[time, 100],[time, 120],[time, 120],[time, 120],[time, 120]];
+    for(var i=0;i<1000;i++){
+        var randomNum=parseInt(Math.random()*200)
+        var time = timestampToTime(+new Date()+100);
+        data.push([time, 100+randomNum]);
+    }
+    
     optionMove = {
         title: {
             text: ''
@@ -669,7 +675,7 @@ var data=[
         },
         dataZoom: [{
             start: 0,
-            end: 100,
+            end: 10,
             startValue: data[0][0]
         }, {
             type: 'inside'
@@ -708,7 +714,7 @@ var data=[
             }
         },
         series: {
-            name: 'Beijing AQI',
+            name: '',
             type: 'line',
             data: data.map(function (item) {
                 return item[1];
@@ -742,7 +748,6 @@ var data=[
     var data= optionMove.series.data;//获取数组
     window.setInterval(function(){
         data.shift();
-        debugger
         var randomNum=parseInt(Math.random()*200)
         var time = timestampToTime(+new Date()+100);
         data.push([time, 100+randomNum]);

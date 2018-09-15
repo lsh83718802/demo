@@ -5,12 +5,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Agency - Responsive Flat Admin Dashboard</title>
+    <title>WEB监控平台</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <link rel="shortcut icon" href="assets/images/faviicon.png">
 
     <!--Morris Chart CSS -->
     <!-- <link rel="stylesheet" href="assets/plugins/morris/morris.css"> -->
@@ -18,30 +16,120 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
 </head>
 
 <body class="fixed-left">
 
-    <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
 
-    <!-- Begin page -->
     <div id="wrapper">
 
-        <!-- Left Sidebar End -->
-
-        <!-- Start right Content here -->
 
         <div class="content-page">
-            <!-- Start content -->
             <div class="content">
+                <div class="topbar">
 
-                <!-- Top Bar End -->
+                    <nav class="navbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-email-outline noti-icon"></i>
+                                    <span class="badge badge-danger noti-icon-badge">5</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                    <div class="dropdown-item noti-title">
+                                        <h5><span class="badge badge-danger float-right">745</span>站内消息</h5>
+                                    </div>
+
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon"><img src="assets/images/users/user-5.jpg" alt="user-img" class="img-fluid rounded-circle"> </div>
+                                        <p class="notify-details"><b>7月28日22点至7月29日9点部分用户运行数据无法显示公告</b><small class="text-muted">因机房网络故障导致7月28日22点至29日9点部分运行数据无法显示
+                                            因7月28日22点机房网络故障导致云观测网站运行数据中可用率、连通率无法正常显示，经过机房紧急抢修，于7月29日9点全部恢复。期间安全检测和故障报警不受影响，给您带来的不便深表歉意。</small></p>
+                                    </a>
+
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle"> </div>
+                                        <p class="notify-details"><b>新版云观测上线</b><small class="text-muted">全新页面，新增网站名片分析和客户支持模块
+                                            云观测页面全新改版，展示效果更直观。新增网站名片分析和客户支持系统。
+                                            站长可随时了解网站APP的使用占比数据。通过客户支持系统获取更多帮助信息，发起工单并实时了解工单受理进度。</small></p>
+                                    </a>
+
+                                    
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle"> </div>
+                                        <p class="notify-details"><b>云观测"开放API"全面上线啦！</b><small class="text-muted">让你拥有支配全球观测节点与云分析的强大能力
+                                            云观测通过开放所有功能API，为开发者提供调度云监测技术和全球资源的能力。开放API，让更多的梦想变成可能。
+                                            如果你有数量巨大的网站，或是希望定制化调用云观测服务，开放API帮你轻松实现。</small></p>
+                                    </a>
+
+                                    
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            查看全部
+                                        </a>
+
+                                </div>
+                            </li>
+
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-bell-outline noti-icon"></i>
+                                    <span class="badge badge-success noti-icon-badge">2</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                    
+                                    <div class="dropdown-item noti-title">
+                                        <h5><span class="badge badge-danger float-right">87</span>告警信息</h5>
+                                    </div>
+
+                                    
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
+                                        <p class="notify-details"><b>高危漏洞</b><small class="text-muted">Struts2 Jakarta插件高危远程代码执行漏洞</small></p>
+                                    </a>
+
+                                    
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-warning"><i class="mdi mdi-martini"></i></div>
+                                        <p class="notify-details"><b>PHPMailer任意文件读取漏洞</b><small class="text-muted">PHPMailer是全球最流行邮件发送类，其全球范围内的用户量大约有900万，被诸多开源项目所采用，包括WordPress、Drupal、1CRM、Joomla!等。PHPMailer <= 5.2.21版本存在任意文件读取漏洞（CVE-2017-5223），成功利用该漏洞，可获取服务器中的任意文件内容</small></p>
+                                    </a>
+
+                                    
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            查看全部
+                                        </a>
+
+                                </div>
+                            </li>
+
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/user-5.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> 个人中心</a>
+                                    <a class="dropdown-item" href="#"><span class="badge badge-success pull-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> 设置</a>
+                                    <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> 退出</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <ul class="list-inline menu-left mb-0">
+                            <li class="hide-phone list-inline-item app-search">
+                                <h3 class="page-title">WEB监控平台</h3>
+                            </li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                    </nav>
+                </div>
+                
 
                 <div class="page-content-wrapper ">
 
@@ -50,33 +138,45 @@
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
                                 <div class="mini-stat clearfix bg-white">
-                                    <span class="mini-stat-icon"><i class="ti-shopping-cart"></i></span>
+                                    <span class="mini-stat-icon"><i class="ti-server"></i></span>
                                     <div class="mini-stat-info text-right text-light">
-                                        <span class="counter text-white">15852</span> Total Earnings
+                                        <div>
+                                            <span class="counter counter-01 text-white">15852</span> 
+                                        </div>
+                                        <div class="count-bottom-text">资源数量</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3">
                                 <div class="mini-stat clearfix bg-success">
-                                    <span class="mini-stat-icon"><i class="ti-user"></i></span>
+                                    <span class="mini-stat-icon"><i class="ti-new-window"></i></span>
                                     <div class="mini-stat-info text-right text-light">
-                                        <span class="counter text-white">956</span> Pending Projects
+                                        <div>
+                                            <span class="counter counter-02 text-white">602228</span>
+                                        </div>
+                                        <div class="count-bottom-text">在线总数</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3">
                                 <div class="mini-stat clearfix bg-orange">
-                                    <span class="mini-stat-icon"><i class="ti-shopping-cart-full"></i></span>
+                                    <span class="mini-stat-icon"><i class="ti-rocket"></i></span>
                                     <div class="mini-stat-info text-right text-light">
-                                        <span class="counter text-white">5210</span> New Users
+                                        <div>
+                                            <span class="counter counter-03 text-white">80</span> 
+                                        </div>
+                                        <div class="count-bottom-text">告警总数</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3">
                                 <div class="mini-stat clearfix bg-info">
-                                    <span class="mini-stat-icon"><i class="ti-stats-up"></i></span>
+                                    <span class="mini-stat-icon"><i class="ti-unlink"></i></span>
                                     <div class="mini-stat-info text-right text-light">
-                                        <span class="counter text-white">20544</span> New Projects
+                                        <div>
+                                            <span class="counter counter-04 text-white">70</span>
+                                        </div> 
+                                        <div class="count-bottom-text">利用率%</div>
                                     </div>
                                 </div>
                             </div>
@@ -200,46 +300,24 @@
                             </div>
 
                         </div>
-                        <!-- end row -->
 
                     </div>
-                    <!-- container -->
 
                 </div>
-                <!-- Page content Wrapper -->
 
             </div>
-            <!-- content -->
 
-            <!-- <footer class="footer">
-                © 2018 Agency - Crafted with <i class="mdi mdi-heart text-danger"></i> by Lamarena.
-            </footer> -->
+          
 
         </div>
-        <!-- End Right content here -->
 
     </div>
-    <!-- END wrapper -->
  
-    <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <!-- <script src="assets/js/modernizr.min.js"></script> -->
-    <script src="assets/js/detect.js"></script>
-    <script src="assets/js/fastclick.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/jquery.blockUI.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/jquery.nicescroll.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-    <!--Morris Chart-->
-    <!-- <script src="assets/plugins/morris/morris.min.js"></script> -->
-    <!-- <script src="assets/plugins/raphael/raphael-min.js"></script> -->
-
-    <!-- <script src="assets/pages/dashborad.js"></script> -->
-
+   
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
