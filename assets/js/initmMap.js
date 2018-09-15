@@ -646,4 +646,124 @@ var data=[
     
 
     myChart.setOption(option, true);
+    var domMove = document.getElementById("mapContainerMove");
+    var myChartMove = echarts.init(domMove);
+    var time = timestampToTime(+new Date());
+    var data = [[time, 100],[time, 120],[time, 120],[time, 120],[time, 120]];
+    optionMove = {
+        title: {
+            text: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            data: data.map(function (item) {
+                return item[0];
+            })
+        },
+        yAxis: {
+            splitLine: {
+                show: false
+            }
+        },
+        dataZoom: [{
+            start: 0,
+            end: 100,
+            startValue: data[0][0]
+        }, {
+            type: 'inside'
+        }],
+        visualMap: {
+            top: 0,
+            left: 10,
+            orient: 'horizontal',
+            align: 'left',
+            pieces: [{
+                gt: 0,
+                lte: 50,
+                color: '#096'
+            }, {
+                gt: 50,
+                lte: 100,
+                color: '#ffde33'
+            }, {
+                gt: 100,
+                lte: 150,
+                color: '#ff9933'
+            }, {
+                gt: 150,
+                lte: 200,
+                color: '#cc0033'
+            }, {
+                gt: 200,
+                lte: 300,
+                color: '#660099'
+            }, {
+                gt: 300,
+                color: '#7e0023'
+            }],
+            outOfRange: {
+                color: '#999'
+            }
+        },
+        series: {
+            name: 'Beijing AQI',
+            type: 'line',
+            data: data.map(function (item) {
+                return item[1];
+            }),
+            markLine: {
+                silent: true,
+                data: [{
+                    yAxis: 50
+                }, {
+                    yAxis: 100
+                }, {
+                    yAxis: 150
+                }, {
+                    yAxis: 200
+                }, {
+                    yAxis: 300
+                }, {
+                    yAxis: 1000
+                }, {
+                    yAxis: 3000
+                }, {
+                    yAxis: 10000
+                }, {
+                    yAxis: 30000
+                }]
+            }
+        }
+    };
+    myChartMove.setOption(optionMove, true);
+
+    var data= optionMove.series.data;//获取数组
+    window.setInterval(function(){
+        data.shift();
+        debugger
+        var randomNum=parseInt(Math.random()*200)
+        var time = timestampToTime(+new Date()+100);
+        data.push([time, 100+randomNum]);
+        console.log(data);
+        refreshData(myChartMove,data);
+    },1000);
+    
+}
+function refreshData(myChart, data){
+    var option = myChart.getOption();//获取页面的option
+    option.series[0].data = data;//设置新的数据
+    myChart.setOption(option);//绑定到ECharts
+}
+
+function timestampToTime (timestamp){
+    var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    var D = date.getDate() + ' ';
+    var h = date.getHours() + ':';
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    return h+m;
 }
