@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Agency - Responsive Fl1at Admin Dashboard</title>
+    <title>Agency - Responsive Flat Admin Dashboard</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="assets/images/faviicon.png">
 
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/morris/morris.css"> -->
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -85,9 +85,10 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="card card-sec m-b-30">
+                                    <div id="mapContainer" style="height: 100%;"></div>
                                     <div class="card-body">
-                                        <h4 class="mt-0 header-title">Product sales</h4>
-                                        <div id="morris-area-example" style="height: 300px"></div>
+                                        <!-- <h4 class="mt-0 header-title">Product sales</h4> -->
+                                        <!-- <div id="morris-area-example" style="height: 300px"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +113,7 @@
                                             </li>
                                         </ul>
 
-                                        <div id="morris-bar-example" style="height: 300px"></div>
+                                        <!-- <div id="morris-bar-example" style="height: 300px"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +247,7 @@
                                             </li>
                                         </ul>
 
-                                        <div id="morris-donut-example" style="height: 265px"></div>
+                                        <!-- <div id="morris-donut-example" style="height: 265px"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -263,21 +264,21 @@
             </div>
             <!-- content -->
 
-            <footer class="footer">
+            <!-- <footer class="footer">
                 © 2018 Agency - Crafted with <i class="mdi mdi-heart text-danger"></i> by Lamarena.
-            </footer>
+            </footer> -->
 
         </div>
         <!-- End Right content here -->
 
     </div>
     <!-- END wrapper -->
-
+ 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/modernizr.min.js"></script>
+    <!-- <script src="assets/js/modernizr.min.js"></script> -->
     <script src="assets/js/detect.js"></script>
     <script src="assets/js/fastclick.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
@@ -287,14 +288,23 @@
     <script src="assets/js/jquery.scrollTo.min.js"></script>
 
     <!--Morris Chart-->
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <!-- <script src="assets/plugins/morris/morris.min.js"></script> -->
+    <!-- <script src="assets/plugins/raphael/raphael-min.js"></script> -->
 
-    <script src="assets/pages/dashborad.js"></script>
+    <!-- <script src="assets/pages/dashborad.js"></script> -->
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
+     <!-- 地图 -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="" src="./assets/js/initmMap.js"></script>
+  
+    <script>
+        mapInit();
+    </script>
 </body>
 
 </html>
