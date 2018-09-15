@@ -83,38 +83,9 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="card card-sec m-b-30">
-                                    <div id="mapContainer" style="height: 100%;"></div>
-                                    <div class="card-body">
-                                        <!-- <h4 class="mt-0 header-title">Product sales</h4> -->
-                                        <!-- <div id="morris-area-example" style="height: 300px"></div> -->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card card-sec m-b-30">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title">Revenue</h4>
-
-                                        <ul class="list-inline widget-chart m-t-20 text-center">
-                                            <li>
-                                                <h4 class=""><b>5248</b></h4>
-                                                <p class="text-muted m-b-0">Marketplace</p>
-                                            </li>
-                                            <li>
-                                                <h4 class=""><b>321</b></h4>
-                                                <p class="text-muted m-b-0">Last week</p>
-                                            </li>
-                                            <li>
-                                                <h4 class=""><b>964</b></h4>
-                                                <p class="text-muted m-b-0">Last Month</p>
-                                            </li>
-                                        </ul>
-
-                                        <!-- <div id="morris-bar-example" style="height: 300px"></div> -->
-                                    </div>
+                                    <div id="mapContainer" style="height: 100%;overflow: auto;"></div>
                                 </div>
                             </div>
                         </div>
@@ -124,18 +95,17 @@
                             <div class="col-xl-8">
                                 <div class="card card-sec m-b-30">
                                     <div class="card-body">
-                                        <h4 class="mt-0 m-b-15 header-title">Recent Orders</h4>
+                                        <h4 class="mt-0 m-b-15 header-title">全球排行版</h4>
 
                                         <div class="table-responsive">
                                             <table class="table table-hover mb-0">
                                                 <thead>
                                                     <tr class="titles">
-                                                        <th>Costumer Name</th>
-                                                        <th>Company</th>
-                                                        <th>Status</th>
-                                                        <th>Invoice</th>
-                                                        <th>Start date</th>
-                                                        <th>Amount</th>
+                                                        <th>国家</th>
+                                                        <th>公司</th>
+                                                        <th>编号</th>
+                                                        <th>加入时间</th>
+                                                        <th>公司资金</th>
                                                     </tr>
 
                                                 </thead>
@@ -148,16 +118,14 @@
                                                                         class="rounded-circle">
                                                                 </div>
                                                                 <div class="text-user">
-                                                                    <h6>Tiger Nixon</h6>
-                                                                    <p>Web Designer</p>
+                                                                    <h6>中国</h6>
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="c-table__cell">Dribble</td>
-                                                        <td class="c-table__cell"><span class="badge badge-warning">Due</span></td>
-                                                        <td class="c-table__cell">INV-001001</td>
-                                                        <td class="c-table__cell">2011/04/25</td>
-                                                        <td class="c-table__cell">$320,800</td>
+                                                        <td>锐捷网络</td>
+                                                        <td class="c-table__cell">INV-00001</td>
+                                                        <td class="c-table__cell">1991/04/25</td>
+                                                        <td class="c-table__cell">$88888.88</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="c-table__cell">
@@ -167,16 +135,14 @@
                                                                         class="rounded-circle">
                                                                 </div>
                                                                 <div class="text-user">
-                                                                    <h6>Tiger Nixon</h6>
-                                                                    <p>Web Designer</p>
+                                                                    <h6>美国</h6>
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>Accountant</td>
-                                                        <td><span class="badge badge-info">Paid</span></td>
-                                                        <td>63</td>
+                                                        <td>FaceBook</td>
+                                                        <td>INV-00002</td>
                                                         <td>2011/07/25</td>
-                                                        <td>$170,750</td>
+                                                        <td>$1700,750</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="c-table__cell">
@@ -186,16 +152,14 @@
                                                                         class="rounded-circle">
                                                                 </div>
                                                                 <div class="text-user">
-                                                                    <h6>Tiger Nixon</h6>
-                                                                    <p>Web Designer</p>
+                                                                    <h6>中国</h6>
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>Junior Technical Author</td>
-                                                        <td><span class="badge badge-info">Paid</span></td>
-                                                        <td>66</td>
-                                                        <td>2009/01/12</td>
-                                                        <td>$86,000</td>
+                                                        <td>阿里巴巴</td>
+                                                        <td>INV-00003</td>
+                                                        <td>2012/01/12</td>
+                                                        <td>$860,000</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="c-table__cell">
@@ -205,15 +169,12 @@
                                                                         class="rounded-circle">
                                                                 </div>
                                                                 <div class="text-user">
-                                                                    <h6>Tiger Nixon</h6>
-                                                                    <p>Web Designer</p>
+                                                                    <h6>西班牙</h6>
                                                                 </div>
                                                             </div>
                                                         </td>
-
-                                                        <td>Senior Javascript Developer</td>
-                                                        <td><span class="badge badge-warning">Due</span></td>
-                                                        <td>22</td>
+                                                        <td>Zara</td>
+                                                        <td>INV-00004</td>
                                                         <td>2012/03/29</td>
                                                         <td>$433,060</td>
                                                     </tr>
@@ -298,8 +259,10 @@
 
      <!-- 地图 -->
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script> -->
+    <script src="https://riboseyim.github.io/charts/echarts/world.js"></script>
+    <script src="https://riboseyim.github.io/charts/echarts/china.js"></script>
+    <script  src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="" src="./assets/js/initmMap.js"></script>
   
     <script>

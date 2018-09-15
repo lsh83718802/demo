@@ -400,201 +400,249 @@ function mapInit(){
     };
     var dom = document.getElementById("mapContainer");
     var myChart = echarts.init(dom);
-    var option = {
-        // backgroundColor: '#404a59',
-        title: {
-            text: '资源分布情况',
-            left: 'center',
+    //http://gallery.echartsjs.com/editor.html?c=xSyKKAw97l
+var data=[
+    { 
+    "time":'',"data":[ 
+   {"name":"Mexico","value":[1626,14.798,"墨西哥"]},
+   {"name":"United Kingdom","value":[1549,14.097,"英国"]},
+   {"name":"Japan","value":[1095,9.965,"日本"]},
+   {"name":"The Bahamas","value":[758,6.898,"巴哈马群岛"]},
+   {"name":"Germany","value":[622,5.661,"德国"]},
+   {"name":"France","value":[512,4.660,"法国"]},
+   {"name":"Jamaica","value":[457,4.159,"牙买加"]},
+   {"name":"Italy","value":[431,3.922,"意大利"]},
+   {"name":"Bermuda","value":[398,3.622,"百慕大群岛"]},
+   {"name":"Dominican Republic","value":[336,3.058,"多米尼加"]},
+   {"name":"Netherlands","value":[312,2.839,"荷兰"]},
+   {"name":"Spain","value":[306,2.785,"西班牙"]},
+   {"name":"Switzerland","value":[236,2.148,"瑞士"]},
+   {"name":"Denmark","value":[222,2.020,"丹麦"]},
+   {"name":"Ireland","value":[220,2.002,"爱尔兰"]}
+    ]
+  },
+  ]
+  
+  var option = {
+    baseOption: {
+      animationDurationUpdate: 1000,
+      animationEasingUpdate: 'quinticInOut',
+      timeline: {
+        axisType: 'category',
+        orient: 'vertical',
+        autoPlay: true,
+        inverse: true,
+        playInterval: 5000,
+        left: null,
+        right: 5,
+        top: 20,
+        bottom: 20,
+        width: 46,
+        height: null,
+        label: {
+          normal: {
             textStyle: {
-                color: '#fff'
+              color: '#ddd'
             }
-        },
-        tooltip : {
-            trigger: 'item'
-        },
-        bmap: {
-            center: [104.114129, 37.550339],
-            zoom: 5,
-            roam: true,
-            mapStyle: {
-                styleJson: [
-                        {
-                            "featureType": "water",
-                            "elementType": "all",
-                            "stylers": {
-                                "color": "#044161"
-                            }
-                        },
-                        {
-                            "featureType": "land",
-                            "elementType": "all",
-                            "stylers": {
-                                "color": "#004981"
-                            }
-                        },
-                        {
-                            "featureType": "boundary",
-                            "elementType": "geometry",
-                            "stylers": {
-                                "color": "#064f85"
-                            }
-                        },
-                        {
-                            "featureType": "railway",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "highway",
-                            "elementType": "geometry",
-                            "stylers": {
-                                "color": "#004981"
-                            }
-                        },
-                        {
-                            "featureType": "highway",
-                            "elementType": "geometry.fill",
-                            "stylers": {
-                                "color": "#005b96",
-                                "lightness": 1
-                            }
-                        },
-                        {
-                            "featureType": "highway",
-                            "elementType": "labels",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "arterial",
-                            "elementType": "geometry",
-                            "stylers": {
-                                "color": "#004981"
-                            }
-                        },
-                        {
-                            "featureType": "arterial",
-                            "elementType": "geometry.fill",
-                            "stylers": {
-                                "color": "#00508b"
-                            }
-                        },
-                        {
-                            "featureType": "poi",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "green",
-                            "elementType": "all",
-                            "stylers": {
-                                "color": "#056197",
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "subway",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "manmade",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "local",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "arterial",
-                            "elementType": "labels",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        },
-                        {
-                            "featureType": "boundary",
-                            "elementType": "geometry.fill",
-                            "stylers": {
-                                "color": "#029fd4"
-                            }
-                        },
-                        {
-                            "featureType": "building",
-                            "elementType": "all",
-                            "stylers": {
-                                "color": "#1a5787"
-                            }
-                        },
-                        {
-                            "featureType": "label",
-                            "elementType": "all",
-                            "stylers": {
-                                "visibility": "off"
-                            }
-                        }
-                ]
+          },
+          emphasis: {
+            textStyle: {
+              color: '#fff'
             }
+          }
         },
-        series : [
-            {
-                type: 'effectScatter',
-                coordinateSystem: 'bmap',
-                data: convertData(data.sort(function (a, b) {
-                    return b.value - a.value;
-                })),
-                symbolSize: function (val) {
-                    return val[2] / 10;
-                },
-                showEffectOn: 'emphasis',
-                rippleEffect: {
-                    brushType: 'stroke'
-                },
-                hoverAnimation: true,
-                label: {
-                    normal: {
-                        formatter: '',
-                        position: 'right',
-                        show: true
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#f4e925',
-                        shadowBlur: 10,
-                        shadowColor: '#333'
-                    }
-                },
-                zlevel: 1
+        symbol: 'none',
+        lineStyle: {
+          color: '#555'
+        },
+        checkpointStyle: {
+          color: '#bbb',
+          borderColor: '#777',
+          borderWidth: 1
+        },
+        controlStyle: {
+          showNextBtn: false,
+          showPrevBtn: false,
+          normal: {
+            color: '#666',
+            borderColor: '#666'
+          },
+          emphasis: {
+            color: '#aaa',
+            borderColor: '#aaa'
+          }
+        },
+        data: data.map(function(ele) {
+          return ele.time
+        })
+      },
+      backgroundColor: '#404a59',
+      title: {
+        text: '全球资源分布情况',
+        left: 'center',
+        top: '5%',
+        textStyle: {
+          fontSize: 25,
+          color: 'rgba(255,255,255, 0.9)'
+        }
+      },
+      tooltip: {
+        formatter: function(params) {
+          if ('value' in params.data) {
+            return params.data.value[2] + ': ' + params.data.value[0];
+          }
+        }
+      },
+      grid: {
+        left: '12%',
+        right: '45%',
+        top: '65%',
+        bottom: 20
+      },
+      xAxis: {},
+      yAxis: {},
+      series: [
+        {
+          id: 'map',
+          type: 'map',
+          mapType: 'world',
+          top: '10%',
+          bottom: '25%',
+          left: 10,
+          itemStyle: {
+            normal: {
+              areaColor: '#323c48',
+              borderColor: '#404a59'
             },
-            {
-                type: 'custom',
-                coordinateSystem: 'bmap',
-                itemStyle: {
-                    normal: {
-                        opacity: 0.5
-                    }
-                },
-                animation: false,
-                silent: true,
-                data: [0],
-                z: -10
+            emphasis: {
+              label: {
+                show: true
+              },
+              areaColor: 'rgba(255,255,255, 0.5)'
             }
-        ]
-    };
+          },
+          data: []
+        }, {
+          id: 'bar',
+          type: 'bar',
+          tooltip: {
+            show: false
+          },
+          label: {
+            normal: {
+              show: true,
+              position: 'right',
+              textStyle: {
+                color: '#FFFFF'
+              }
+            }
+          },
+          data: []
+        }, {
+          id: 'pie',
+          type: 'pie',
+          radius: ['8%', '20%'],
+          center: ['75%', '85%'],
+          roseType: 'radius',
+          tooltip: {
+            formatter: '{b} {d}%'
+          },
+          data: [],
+          label: {
+            normal: {
+              textStyle: {
+                color: '#ddd'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              lineStyle: {
+                color: '#ddd'
+              }
+            }
+          },
+          itemStyle: {
+            normal: {
+              borderColor: 'rgba(0,0,0,0.3)',
+              borderSize: 1
+            }
+          }
+        }
+      ]
+    },
+    options: []
+  }
+  
+  for (var i = 0; i < data.length; i++) {
+    //计算其余国家GDP
+    var restPercent = 100;
+    var restValue = 0;
+    data[i].data.forEach(function(ele) {
+      restPercent = restPercent - ele.value[1];
+    });
+    restValue = data[i].data[0].value[0] * (restPercent / data[i].data[0].value[1]);
+    console.log(restPercent);
+    console.log(restValue);
+    option.options.push({
+      visualMap: [{
+        dimension: 0,
+        left: 10,
+        itemWidth: 12,
+        min: data[i].data[14].value[0],
+        max: data[i].data[0].value[0],
+        text: ['High', 'Low'],
+        textStyle: {
+          color: '#ddd'
+        },
+        inRange: {
+          color: ['lightskyblue', 'yellow', 'orangered', 'red']
+        }
+      }],
+      xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.1],
+        axisLabel: {
+          show: false,
+        }
+      },
+      yAxis: {
+        type: 'category',
+        axisLabel: {
+          textStyle: {
+            color: '#ddd'
+          }
+        },
+        data: data[i].data.map(function(ele) {
+          return ele.value[2]
+        }).reverse()
+      },
+      series: [
+        {
+          id: 'map',
+          data: data[i].data
+        }, {
+          id: 'bar',
+          data: data[i].data.map(function(ele) {
+            return ele.value[0]
+          }).sort(function(a, b) {
+            return a > b
+          })
+        }, {
+          id: 'pie',
+          data: data[i].data.map(function(ele) {
+            return {
+              name: ele.value[2],
+              value: ele.value
+            }
+          }).concat({
+            name: '其他国家',
+            value: restValue
+          }),
+        }
+      ]
+    })
+  }
     
 
     myChart.setOption(option, true);
